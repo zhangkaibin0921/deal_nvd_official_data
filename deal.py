@@ -74,3 +74,31 @@ def addOne(filename):
 
 for filename in xml_list:#['nvdcve-1.1-2002.json']:
     addOne(filename)
+
+
+#更新vule_detail逻辑
+# conn = mysql.connector.connect(
+#     host='127.0.0.1',
+#     user='root',
+#     password='123456',
+#     database='test'
+# )
+# cursor = conn.cursor()
+#
+# query = "select cve_id from vule_detail where cve_id is not null"
+# cursor.execute(query)
+# result = cursor.fetchall()
+#
+# for row in result:
+#     cve_id = str(row[0])
+#     print(cve_id)
+#     query = "select detail,products,manufacture_products from nvd where cve_id=%s"
+#     cursor.execute(query,(cve_id,))
+#     res = cursor.fetchone()
+#     if res and str(res[0])!='[]':
+#         detail=str(res[0]).replace('manufacture','manufacturers')
+#
+#         query="update vule_detail set detail=%s,product=%s,fingerprint=%s where cve_id=%s"
+#         cursor.execute(query, (detail,str(res[2]),str(res[1]),cve_id,))
+#         conn.commit()
+#         print(detail,str(res[2]),str(res[1]),cve_id,)
